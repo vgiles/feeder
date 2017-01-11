@@ -10,6 +10,8 @@ Requires the following externals/packages to be installed:
 2. [Bach](http://www.bachproject.net)
 3. [Cage](http://www.bachproject.net)
 
+To install these packages, open the package manager in MaxMSP (File-View Package Manager) and then search for each, and install. 
+
 Premiere forthcoming, after which please contact me if you wish to perform the piece.
 
 Copyright 2016-17 [Vincent Giles](http://www.vgiles.net)
