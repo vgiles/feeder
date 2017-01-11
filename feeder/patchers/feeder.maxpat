@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 107.0, 140.0, 1147.0, 649.0 ],
+		"rect" : [ 190.0, 232.0, 1147.0, 649.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,732 @@
 		"workspacedisabled" : 1,
 		"title" : "Vincent Giles - Feeder",
 		"boxes" : [ 			{
+				"box" : 				{
+					"bubble" : 1,
+					"bubblepoint" : 0.6,
+					"id" : "obj-65",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 120.0, 147.0, 150.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 176.0, 198.0, 150.0, 24.0 ],
+					"style" : "",
+					"text" : "Jitter Render"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-181",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 0,
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 1,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"rect" : [ 393.0, 94.0, 640.0, 480.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 12.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
+						"visible" : 1,
+						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 294.0, 163.0, 77.0, 22.0 ],
+									"style" : "",
+									"text" : "prepend text"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-4",
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 297.0, 97.0, 30.0, 30.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-2",
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 25.0, 104.0, 30.0, 30.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 13.0,
+									"hidden" : 1,
+									"id" : "obj-16",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 400.0, 167.0, 64.0, 23.0 ],
+									"style" : "",
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 13.0,
+									"id" : "obj-6",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 25.0, 350.0, 40.0, 23.0 ],
+									"style" : "",
+									"text" : "reset"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 13.0,
+									"id" : "obj-7",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
+									"patching_rect" : [ 25.0, 319.0, 196.0, 23.0 ],
+									"style" : "",
+									"text" : "jit.window twitter @size 600 150"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 13.0,
+									"id" : "obj-8",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 25.0, 375.0, 90.0, 23.0 ],
+									"style" : "",
+									"text" : "jit.gl.handle"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 13.0,
+									"id" : "obj-9",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
+									"patching_rect" : [ 25.0, 285.0, 75.0, 23.0 ],
+									"style" : "",
+									"text" : "jit.gl.render"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 13.0,
+									"id" : "obj-10",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "erase" ],
+									"patching_rect" : [ 25.0, 240.0, 63.0, 23.0 ],
+									"style" : "",
+									"text" : "t b erase"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 13.0,
+									"id" : "obj-13",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 25.0, 210.0, 71.0, 23.0 ],
+									"style" : "",
+									"text" : "qmetro 30"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-21",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 365.0, 167.0, 24.0, 24.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 13.0,
+									"id" : "obj-23",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 365.0, 194.0, 48.0, 23.0 ],
+									"style" : "",
+									"text" : "fontlist"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 13.0,
+									"id" : "obj-97",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 365.0, 248.0, 74.0, 23.0 ],
+									"style" : "",
+									"text" : "tosymbol"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 13.0,
+									"id" : "obj-99",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 365.0, 276.0, 85.0, 23.0 ],
+									"style" : "",
+									"text" : "prepend font"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-100",
+									"items" : [ "Apple Braille Outline 6 Dot", ",", "Apple Braille Outline 8 Dot", ",", "Apple Braille Pinpoint 6 Dot", ",", "Apple Braille Pinpoint 8 Dot", ",", "Apple Braille", ",", "Apple Color Emoji", ",", "Apple Symbols", ",", "Apple SD Gothic Neo Regular", ",", ".Apple SD Gothic NeoI Regular", ",", "Apple SD Gothic Neo Medium", ",", ".Apple SD Gothic NeoI Medium", ",", "Apple SD Gothic Neo SemiBold", ",", ".Apple SD Gothic NeoI SemiBold", ",", "Apple SD Gothic Neo Bold", ",", ".Apple SD Gothic NeoI Bold", ",", "Apple SD Gothic Neo Light", ",", ".Apple SD Gothic NeoI Light", ",", "Apple SD Gothic Neo Thin", ",", ".Apple SD Gothic NeoI Thin", ",", "Apple SD Gothic Neo UltraLight", ",", ".Apple SD Gothic NeoI UltraLight", ",", "Apple SD GothicNeo ExtraBold", ",", "Apple SD GothicNeo ExtraBold", ",", "Apple SD Gothic Neo Heavy", ",", ".Apple SD Gothic NeoI Heavy", ",", ".Aqua Kana", ",", "Arial Hebrew", ",", "Arial Hebrew Light", ",", ".Arial Hebrew Desk Interface", ",", ".Arial Hebrew Desk Interface Light", ",", "Arial Hebrew Scholar", ",", "Arial Hebrew Scholar Light", ",", "Avenir Next Condensed Bold", ",", "Avenir Next Condensed Demi Bold", ",", "Avenir Next Condensed Italic", ",", "Avenir Next Condensed Medium", ",", "Avenir Next Condensed Regular", ",", "Avenir Next Condensed Heavy", ",", "Avenir Next Condensed Ultra Light", ",", "Avenir Next Bold", ",", "Avenir Next Demi Bold", ",", "Avenir Next Italic", ",", "Avenir Next Medium", ",", "Avenir Next Regular", ",", "Avenir Next Heavy", ",", "Avenir Next Ultra Light", ",", "Avenir Book", ",", "Avenir Book Oblique", ",", "Avenir Black", ",", "Avenir Black Oblique", ",", "Avenir Heavy", ",", "Avenir Heavy Oblique", ",", "Avenir Light", ",", "Avenir Light Oblique", ",", "Avenir Medium", ",", "Avenir Medium Oblique", ",", "Avenir Oblique", ",", "Avenir Roman", ",", "Courier", ",", "Courier Oblique", ",", "Geeza Pro Regular", ",", "Geeza Pro Bold", ",", ".Geeza Pro Interface Regular", ",", ".Geeza Pro Interface Bold", ",", ".Geeza Pro Interface Light", ",", ".Geeza PUA", ",", "Geneva", ",", "Helvetica", ",", "Helvetica Oblique", ",", "Helvetica Light", ",", "Helvetica Light Oblique", ",", "Helvetica Neue", ",", "Helvetica Neue Condensed Bold", ",", "Helvetica Neue UltraLight", ",", "Helvetica Neue Light", ",", "Helvetica Neue Condensed Black", ",", "Helvetica Neue Medium", ",", "Helvetica Neue Thin", ",", ".Helvetica Neue DeskInterface Regular", ",", ".Helvetica Neue DeskInterface Bold", ",", ".Helvetica Neue DeskInterface Italic", ",", ".Helvetica Neue DeskInterface Medium P4", ",", ".Helvetica Neue DeskInterface Medium Italic P4", ",", ".Helvetica Neue DeskInterface Light", ",", ".Helvetica Neue DeskInterface Thin", ",", ".Helvetica Neue DeskInterface UltraLight", ",", ".Helvetica Neue DeskInterface Heavy", ",", "Hiragino Sans GB W3", ",", ".Hiragino Sans GB Interface W3", ",", "Hiragino Sans GB W6", ",", ".Hiragino Sans GB Interface W6", ",", ".Keyboard", ",", "Kohinoor Devanagari Regular", ",", "Kohinoor Devanagari Medium", ",", "Kohinoor Devanagari Semibold", ",", "Kohinoor Devanagari Bold", ",", "Kohinoor Devanagari Light", ",", "Kohinoor Bangla", ",", "Kohinoor Bangla Semibold", ",", "Kohinoor Bangla Medium", ",", "Kohinoor Bangla Light", ",", "Kohinoor Telugu", ",", "Kohinoor Telugu Semibold", ",", "Kohinoor Telugu Medium", ",", "Kohinoor Telugu Light", ",", ".LastResort", ",", "Lucida Grande", ",", ".Lucida Grande UI Regular", ",", ".Lucida Grande UI Bold", ",", "Marker Felt Thin", ",", "Marker Felt Wide", ",", "Menlo Regular", ",", "Menlo Bold", ",", "Menlo Italic", ",", "Monaco", ",", "Noteworthy Light", ",", "Noteworthy Bold", ",", "Optima Regular", ",", "Optima Bold", ",", "Optima Italic", ",", "Optima ExtraBlack", ",", "Palatino", ",", "PingFang HK Regular", ",", "PingFang TC Regular", ",", "PingFang SC Regular", ",", "PingFang HK Medium", ",", "PingFang TC Medium", ",", "PingFang SC Medium", ",", "PingFang HK Semibold", ",", "PingFang TC Semibold", ",", "PingFang SC Semibold", ",", "PingFang HK Light", ",", "PingFang TC Light", ",", "PingFang SC Light", ",", "PingFang HK Thin", ",", "PingFang TC Thin", ",", "PingFang SC Thin", ",", "PingFang HK Ultralight", ",", "PingFang TC Ultralight", ",", "PingFang SC Ultralight", ",", ".PingFang HK Regular", ",", ".PingFang TC Regular", ",", ".PingFang SC Regular", ",", ".PingFang HK Medium", ",", ".PingFang TC Medium", ",", ".PingFang SC Medium", ",", ".PingFang HK Semibold", ",", ".PingFang TC Semibold", ",", ".PingFang SC Semibold", ",", ".PingFang HK Light", ",", ".PingFang TC Light", ",", ".PingFang SC Light", ",", ".PingFang HK Thin", ",", ".PingFang TC Thin", ",", ".PingFang SC Thin", ",", ".PingFang HK Ultralight", ",", ".PingFang TC Ultralight", ",", ".PingFang SC Ultralight", ",", "System Font Black", ",", "System Font Bold", ",", "System Font Heavy", ",", "System Font Light", ",", "System Font Medium", ",", "System Font Regular", ",", "System Font Semibold", ",", "System Font Thin", ",", "System Font Ultralight", ",", "System Font Bold", ",", "System Font Bold G1", ",", "System Font Bold G2", ",", "System Font Bold G3", ",", "System Font Bold Italic G1", ",", "System Font Bold Italic G2", ",", "System Font Bold Italic G3", ",", "System Font Heavy", ",", "System Font Light", ",", "System Font Medium", ",", "System Font Regular", ",", "System Font Regular G1", ",", "System Font Regular G2", ",", "System Font Regular G3", ",", "System Font Italic", ",", "System Font Italic G1", ",", "System Font Italic G2", ",", "System Font Italic G3", ",", "System Font Semibold", ",", "Heiti TC Light", ",", "Heiti SC Light", ",", "Heiti TC Medium", ",", "Heiti SC Medium", ",", ".HeitiUI TC Thin", ",", ".HeitiUI SC Thin", ",", ".HeitiUI GB18030PUA Thin", ",", ".HeitiUI K Thin", ",", ".HeitiUI J Thin", ",", ".HeitiUI TC Ultra Light", ",", ".HeitiUI SC Ultra Light", ",", ".HeitiUI GB18030PUA Ultra Light", ",", ".HeitiUI K Ultra Light", ",", ".HeitiUI J Ultra Light", ",", "Symbol", ",", "Thonburi", ",", "Thonburi Light", ",", "Times Roman", ",", "Times Bold", ",", "Times Italic", ",", "Zapf Dingbats", ",", "Hiragino Mincho ProN W3", ",", "Hiragino Mincho Pro W3", ",", "Hiragino Mincho ProN W6", ",", "Hiragino Mincho Pro W6", ",", "Hiragino Sans W0", ",", ".Hiragino Kaku Gothic Interface W0", ",", "Hiragino Sans W1", ",", ".Hiragino Kaku Gothic Interface W1", ",", "Hiragino Sans W2", ",", ".Hiragino Kaku Gothic Interface W2", ",", "Hiragino Sans W3", ",", ".Hiragino Kaku Gothic Interface W3", ",", "Hiragino Kaku Gothic ProN W3", ",", "Hiragino Kaku Gothic Pro W3", ",", "Hiragino Sans W4", ",", ".Hiragino Kaku Gothic Interface W4", ",", "Hiragino Sans W5", ",", ".Hiragino Kaku Gothic Interface W5", ",", "Hiragino Sans W6", ",", ".Hiragino Kaku Gothic Interface W6", ",", "Hiragino Kaku Gothic ProN W6", ",", "Hiragino Kaku Gothic Pro W6", ",", "Hiragino Sans W7", ",", ".Hiragino Kaku Gothic Interface W7", ",", "Hiragino Sans W8", ",", ".Hiragino Kaku Gothic Interface W8", ",", "Hiragino Kaku Gothic Std W8", ",", "Hiragino Kaku Gothic StdN W8", ",", "Hiragino Sans W9", ",", ".Hiragino Kaku Gothic Interface W9", ",", "Al Nile", ",", ".Al Nile PUA", ",", "Al Tarikh Regular", ",", ".Al Tarikh PUA", ",", "Al Bayan Plain", ",", ".Al Bayan PUA Plain", ",", "American Typewriter", ",", "American Typewriter Light", ",", "American Typewriter Condensed", ",", "American Typewriter Condensed Light", ",", "Andale Mono", ",", "Apple Chancery", ",", "AppleGothic Regular", ",", "AppleMyungjo Regular", ",", "Arial Black", ",", "Arial Narrow", ",", "Arial Rounded MT Bold", ",", "Arial Unicode MS", ",", "Arial", ",", "Athelas Regular", ",", "Athelas Italic", ",", "Athelas Bold", ",", "Ayuthaya", ",", "Baghdad Regular", ",", ".Baghdad PUA", ",", "Bangla MN", ",", "Bangla Sangam MN", ",", "Baoli SC Regular", ",", "Baskerville", ",", "Baskerville SemiBold", ",", "Beirut Regular", ",", ".Beirut PUA", ",", "Big Caslon Medium", ",", "Bodoni 72 Oldstyle Book", ",", "Bodoni 72 Oldstyle Bold", ",", "Bodoni 72 Smallcaps Book", ",", "Bodoni 72 Book", ",", "Bodoni 72 Bold", ",", "Bodoni Ornaments", ",", "Bradley Hand Bold", ",", "Broadway Copyist", ",", "Broadway Copyist Perc", ",", "Broadway Copyist Text", ",", "Broadway Copyist Text Ext", ",", "Brush Script MT Italic", ",", "Chalkboard", ",", "Chalkboard SE Light", ",", "Chalkboard SE Regular", ",", "Chalkboard SE Bold", ",", "Chalkduster", ",", "Charter Roman", ",", "Charter Italic", ",", "Charter Bold", ",", "Charter Black", ",", "Cochin", ",", "Comic Sans MS", ",", "Copperplate", ",", "Copperplate Light", ",", "Corsiva Hebrew", ",", "Courier New", ",", "Damascus Regular", ",", ".Damascus PUA", ",", "Damascus Light", ",", ".Damascus PUA Light", ",", "Damascus Medium", ",", ".Damascus PUA Medium", ",", "Damascus Bold", ",", "Damascus Semi Bold", ",", ".Damascus PUA Semi Bold", ",", "DecoType Naskh Regular", ",", ".DecoType Naskh PUA", ",", "Devanagari Sangam MN", ",", "Devanagari MT", ",", "Didot", ",", "DIN Alternate Bold", ",", "DIN Condensed Bold", ",", "Diwan Kufi Regular", ",", ".Diwan Kufi PUA", ",", "Diwan Thuluth Regular", ",", "Engraver Font Extras", ",", "Engraver Font Set", ",", "Engraver Text H", ",", "Engraver Text NCS", ",", "Engraver Text T", ",", "Engraver Time", ",", "Euphemia UCAS", ",", "Farah Regular", ",", ".Farah PUA", ",", "Farisi Regular", ",", "Finale AlphaNotes", ",", "Finale Copyist Text Ext", ",", "Finale Copyist Text", ",", "Finale Lyrics", ",", "Finale Mallets", ",", "Finale Numerics", ",", "Finale Percussion", ",", "Futura Medium", ",", "Futura Condensed Medium", ",", "Futura Condensed ExtraBold", ",", "Georgia", ",", "Gill Sans", ",", "Gill Sans SemiBold", ",", "Gill Sans UltraBold", ",", "Gill Sans Light", ",", "Gujarati Sangam MN", ",", "Gujarati MT", ",", "GungSeo Regular", ",", "Gurmukhi MN", ",", "Gurmukhi Sangam MN", ",", "Gurmukhi MT", ",", "Hannotate SC Regular", ",", "Hannotate TC Regular", ",", "Hannotate SC Bold", ",", "Hannotate TC Bold", ",", "HanziPen SC Regular", ",", "HanziPen TC Regular", ",", "HanziPen SC Bold", ",", "HanziPen TC Bold", ",", "HeadLineA Regular", ",", "Herculanum", ",", "Hoefler Text Ornaments", ",", "Hoefler Text", ",", "Hoefler Text Black", ",", "Impact", ",", "InaiMathi", ",", "Iowan Old Style Roman", ",", "Iowan Old Style Bold", ",", "Iowan Old Style Italic", ",", "Iowan Old Style Black", ",", "Iowan Old Style Titling", ",", "ITF Devanagari Book", ",", "ITF Devanagari Bold", ",", "ITF Devanagari Demi", ",", "ITF Devanagari Light", ",", "ITF Devanagari Medium", ",", "ITF Devanagari Marathi Book", ",", "ITF Devanagari Marathi Bold", ",", "ITF Devanagari Marathi Demi", ",", "ITF Devanagari Marathi Light", ",", "ITF Devanagari Marathi Medium", ",", "Jazz", ",", "JazzCord", ",", "JazzPerc", ",", "JazzText Extended", ",", "JazzText", ",", "Kailasa Regular", ",", "Kailasa Bold", ",", "Kaiti SC Black", ",", "Kaiti SC Bold", ",", "Kaiti TC Bold", ",", "Kaiti SC Regular", ",", "STKaiti", ",", "Kaiti TC Regular", ",", "Kannada MN", ",", "Kannada Sangam MN", ",", "Kefa Regular", ",", "Kefa Bold", ",", "Khmer MN", ",", "Khmer Sangam MN", ",", "Klee Demibold", ",", "Klee Medium", ",", "Kokonor Regular", ",", "Krungthep", ",", "KufiStandardGK Regular", ",", ".KufiStandardGK PUA", ",", "Lantinghei SC Demibold", ",", "Lantinghei SC Extralight", ",", "Lantinghei SC Heavy", ",", "Lantinghei TC Demibold", ",", "Lantinghei TC Extralight", ",", "Lantinghei TC Heavy", ",", "Lao MN", ",", "Lao Sangam MN", ",", "Libian SC Regular", ",", "Luminari", ",", "Maestro Percussion", ",", "Maestro Wide", ",", "Maestro", ",", "MaestroTimes", ",", "Malayalam MN", ",", "Malayalam Sangam MN", ",", "Marion Regular", ",", "Marion Italic", ",", "Marion Bold", ",", "Abadi MT Condensed Extra Bold", ",", "Abadi MT Condensed Light", ",", "Arial", ",", "Baskerville Old Face", ",", "Batang", ",", "Bauhaus 93", ",", "Bell MT", ",", "Bernard MT Condensed", ",", "Book Antiqua", ",", "Bookman Old Style", ",", "Bookshelf Symbol 7", ",", "Braggadocio", ",", "Britannic Bold", ",", "Brush Script MT Italic", ",", "Calibri", ",", "Calibri Light", ",", "Calisto MT", ",", "Cambria Math", ",", "Cambria", ",", "Candara", ",", "Century", ",", "Century Gothic", ",", "Century Schoolbook", ",", "Colonna MT", ",", "Consolas", ",", "Constantia", ",", "Cooper Black", ",", "Copperplate Gothic Bold", ",", "Copperplate Gothic Light", ",", "Corbel", ",", "Curlz MT", ",", "Desdemona", ",", "Edwardian Script ITC", ",", "Engravers MT", ",", "Eurostile", ",", "Footlight MT Light", ",", "Franklin Gothic Book", ",", "Franklin Gothic Medium", ",", "Gabriola", ",", "Garamond", ",", "Gill Sans MT", ",", "Gloucester MT Extra Condensed", ",", "Goudy Old Style", ",", "Gulim", ",", "Haettenschweiler", ",", "Harrington", ",", "Microsoft Himalaya", ",", "Imprint MT Shadow", ",", "Kino MT", ",", "Lucida Blackletter", ",", "Lucida Bright", ",", "Lucida Bright Demibold", ",", "Lucida Calligraphy Italic", ",", "Lucida Console", ",", "Lucida Fax Regular", ",", "Lucida Fax Demibold", ",", "Lucida Fax Italic", ",", "Lucida Handwriting Italic", ",", "Lucida Sans Regular", ",", "Lucida Sans Demibold Roman", ",", "Lucida Sans Italic", ",", "Lucida Sans Demibold Italic", ",", "Lucida Sans Typewriter Regular", ",", "Lucida Sans Typewriter Bold", ",", "Lucida Sans Typewriter Oblique", ",", "Lucida Sans Typewriter Bold Oblique", ",", "Lucida Sans Unicode", ",", "Marlett", ",", "Matura MT Script Capitals", ",", "Meiryo", ",", "MingLiU-ExtB", ",", "MingLiU", ",", "MingLiU_HKSCS-ExtB", ",", "MingLiU_HKSCS", ",", "Mistral", ",", "Modern No. 20", ",", "Mongolian Baiti", ",", "Monotype Corsiva", ",", "Monotype Sorts", ",", "MS Gothic", ",", "MS Mincho", ",", "MS PGothic", ",", "MS PMincho", ",", "MS Reference Sans Serif", ",", "MS Reference Specialty", ",", "Microsoft Yi Baiti", ",", "MT Extra", ",", "News Gothic MT", ",", "Onyx", ",", "Palatino Linotype", ",", "Perpetua Titling MT Light", ",", "Perpetua Titling MT Bold", ",", "Perpetua", ",", "Playbill", ",", "PMingLiU-ExtB", ",", "PMingLiU", ",", "Rockwell", ",", "Rockwell Extra Bold", ",", "SimHei", ",", "SimSun-ExtB", ",", "SimSun", ",", "Stencil", ",", "Microsoft Tai Le", ",", "Times New Roman", ",", "Tw Cen MT", ",", "Verdana", ",", "Wide Latin", ",", "Wingdings 2", ",", "Wingdings 3", ",", "Wingdings", ",", "Microsoft Sans Serif", ",", "Mishafi Gold Regular", ",", "Mishafi Regular", ",", "Mshtakan", ",", "Mshtakan Oblique", ",", "Muna Regular", ",", ".Muna PUA", ",", "Muna Bold", ",", "Muna Black", ",", ".Muna PUA Black", ",", "Myanmar MN", ",", "Myanmar Sangam MN", ",", "Nadeem Regular", ",", ".Nadeem PUA", ",", "NanumGothic", ",", "NanumGothic ExtraBold", ",", "NanumMyeongjo", ",", "NanumMyeongjo ExtraBold", ",", "Nanum Brush Script", ",", "Nanum Pen Script", ",", "New Peninim MT", ",", "New Peninim MT Inclined", ",", "New Peninim MT Bold Inclined", ",", "GB18030 Bitmap", ",", "omextras", ",", "omheads", ",", "omicron", ",", "omsign", ",", "Oriya MN", ",", "Oriya Sangam MN", ",", "Osaka", ",", "Osaka-Mono", ",", "Papyrus Condensed", ",", "Papyrus", ",", "PCMyungjo Regular", ",", "Petrucci", ",", "Phosphate Inline", ",", "Phosphate Solid", ",", "PilGi Regular", ",", "Plantagenet Cherokee", ",", "PT Mono", ",", "PT Sans", ",", "PT Sans Narrow", ",", "PT Sans Caption", ",", "PT Serif", ",", "PT Serif Caption", ",", "Raanana", ",", "Sana Regular", ",", ".Sana PUA", ",", "Sathu", ",", "Savoye LET Plain:1.0", ",", "Savoye LET Plain CC.:1.0", ",", "Seravek", ",", "Seravek Medium", ",", "Seravek Light", ",", "Seravek ExtraLight", ",", "Seville Regular", ",", "Shree Devanagari 714", ",", "SignPainter-HouseScript", ",", "Silom", ",", "Sinhala MN", ",", "Sinhala Sangam MN", ",", "Skia", ",", "Snell Roundhand", ",", "Snell Roundhand Black", ",", "Songti SC Black", ",", "Songti SC Bold", ",", "Songti TC Bold", ",", "Songti SC Light", ",", "STSong", ",", "Songti TC Light", ",", "Songti SC Regular", ",", "Songti TC Regular", ",", "STIXGeneral-Regular", ",", "STIXGeneral-Bold", ",", "STIXGeneral-BoldItalic", ",", "STIXGeneral-Italic", ",", "STIXIntegralsD-Bold", ",", "STIXIntegralsD-Regular", ",", "STIXIntegralsSm-Bold", ",", "STIXIntegralsSm-Regular", ",", "STIXIntegralsUp-Bold", ",", "STIXIntegralsUpD-Bold", ",", "STIXIntegralsUpD-Regular", ",", "STIXIntegralsUp-Regular", ",", "STIXIntegralsUpSm-Bold", ",", "STIXIntegralsUpSm-Regular", ",", "STIXNonUnicode-Regular", ",", "STIXNonUnicode-Bold", ",", "STIXNonUnicode-BoldItalic", ",", "STIXNonUnicode-Italic", ",", "STIXSizeFiveSym-Regular", ",", "STIXSizeFourSym-Bold", ",", "STIXSizeFourSym-Regular", ",", "STIXSizeOneSym-Bold", ",", "STIXSizeOneSym-Regular", ",", "STIXSizeThreeSym-Bold", ",", "STIXSizeThreeSym-Regular", ",", "STIXSizeTwoSym-Bold", ",", "STIXSizeTwoSym-Regular", ",", "STIXVariants-Regular", ",", "STIXVariants-Bold", ",", "Sukhumvit Set Thin", ",", "Sukhumvit Set Light", ",", "Sukhumvit Set Text", ",", "Sukhumvit Set Medium", ",", "Sukhumvit Set Semi Bold", ",", "Sukhumvit Set Bold", ",", "Superclarendon Regular", ",", "Superclarendon Italic", ",", "Superclarendon Light", ",", "Superclarendon Bold", ",", "Superclarendon Black", ",", "Tahoma", ",", "Tamburo", ",", "Tamil MN", ",", "Tamil Sangam MN", ",", "Telugu MN", ",", "Telugu Sangam MN", ",", "Times New Roman", ",", "Trattatello", ",", "Trebuchet MS", ",", "Tsukushi A Round Gothic Regular", ",", "Tsukushi A Round Gothic Bold", ",", "Tsukushi B Round Gothic Regular", ",", "Tsukushi B Round Gothic Bold", ",", "Verdana", ",", "Waseem Regular", ",", "Waseem Light", ",", "Wawati SC Regular", ",", "Wawati TC Regular", ",", "Webdings", ",", "Weibei SC Bold", ",", "Weibei TC Bold", ",", "Wingdings 2", ",", "Wingdings 3", ",", "Wingdings", ",", "Xingkai SC Bold", ",", "Xingkai SC Light", ",", "YuGothic Bold", ",", "YuGothic Medium", ",", "Yuanti SC Bold", ",", "Yuanti TC Bold", ",", "Yuanti SC Light", ",", "Yuanti TC Light", ",", "Yuanti SC Regular", ",", "Yuanti TC Regular", ",", "YuMincho Medium", ",", "YuMincho Demibold", ",", "YuMincho +36p Kana Medium", ",", "YuMincho +36p Kana Demibold", ",", "Yuppy SC Regular", ",", "Yuppy TC Regular", ",", "Zapfino", ",", "Hiragino Maru Gothic Pro W4", ",", "Hiragino Maru Gothic ProN W4", ",", "LiSong Pro", ",", "LiHei Pro", ",", "STFangsong", ",", "STXihei", ",", "STHeiti", ",", "Accidentals", ",", "Legni FluteV" ],
+									"maxclass" : "umenu",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "int", "", "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 365.0, 220.0, 139.0, 22.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Verdana",
+									"fontsize" : 12.0,
+									"id" : "obj-1",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "jit_matrix", "" ],
+									"patching_rect" : [ 170.0, 464.0, 412.0, 38.0 ],
+									"style" : "",
+									"text" : "jit.gl.text @color 1 1 1 1 @fontsize 20 @align 1 @line_length 400 @viewalign 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "tracking",
+									"fontface" : 0,
+									"fontname" : "Verdana",
+									"fontsize" : 12.0,
+									"id" : "obj-17",
+									"lock" : 1,
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 170.0, 375.0, 135.0, 23.0 ],
+									"style" : "",
+									"text_width" : 80.0
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "leadscale",
+									"fontface" : 0,
+									"fontname" : "Verdana",
+									"fontsize" : 12.0,
+									"id" : "obj-18",
+									"lock" : 1,
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 170.0, 350.0, 135.0, 23.0 ],
+									"style" : "",
+									"text_width" : 80.0
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "depth",
+									"fontface" : 0,
+									"fontname" : "Verdana",
+									"fontsize" : 12.0,
+									"id" : "obj-20",
+									"lock" : 1,
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 170.0, 325.0, 135.0, 23.0 ],
+									"style" : "",
+									"text_width" : 80.0
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "precision",
+									"fontface" : 0,
+									"fontname" : "Verdana",
+									"fontsize" : 12.0,
+									"id" : "obj-33",
+									"lock" : 1,
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 170.0, 400.0, 135.0, 23.0 ],
+									"style" : "",
+									"text_width" : 80.0
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "align",
+									"fontface" : 0,
+									"fontname" : "Verdana",
+									"fontsize" : 12.0,
+									"id" : "obj-42",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 170.0, 220.0, 150.0, 23.0 ],
+									"style" : "",
+									"text_width" : 55.0
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "line_length",
+									"fontface" : 0,
+									"fontname" : "Verdana",
+									"fontsize" : 12.0,
+									"id" : "obj-25",
+									"lock" : 1,
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 170.0, 285.0, 135.0, 23.0 ],
+									"style" : "",
+									"text_width" : 85.0
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "mode",
+									"fontface" : 0,
+									"fontname" : "Verdana",
+									"fontsize" : 12.0,
+									"id" : "obj-70",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 170.0, 180.0, 110.0, 23.0 ],
+									"style" : "",
+									"text_width" : 62.0
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "fontsize",
+									"fontface" : 0,
+									"fontname" : "Verdana",
+									"fontsize" : 12.0,
+									"id" : "obj-91",
+									"lock" : 1,
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 170.0, 260.0, 135.0, 23.0 ],
+									"style" : "",
+									"text_width" : 85.0
+								}
+
+							}
+ ],
+						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-10", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-97", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"midpoints" : [ 434.5, 242.0, 374.5, 242.0 ],
+									"source" : [ "obj-100", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-21", 0 ],
+									"disabled" : 0,
+									"hidden" : 1,
+									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-18", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-20", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-23", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-21", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-100", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-25", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-33", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-42", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-70", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-91", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-99", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-97", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-99", 0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 378.0, 198.0, 43.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"globalpatchername" : "",
+						"style" : "",
+						"tags" : ""
+					}
+,
+					"style" : "",
+					"text" : "p jitter"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-179",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 396.0, 147.0, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 150.0, 198.0, 24.0, 24.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-82",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1095.5, 933.0, 151.0, 22.0 ],
+					"style" : "",
+					"text" : "bach.prepend articulations"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-134",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"patching_rect" : [ 1336.5, 897.0, 75.0, 22.0 ],
+					"style" : "",
+					"text" : "bach.keys 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-159",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 1095.5, 897.0, 232.0, 22.0 ],
+					"style" : "",
+					"text" : "bach.mapelem @maxdepth 4 @unwrap 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-162",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"patching_rect" : [ 1095.5, 868.0, 93.0, 22.0 ],
+					"style" : "",
+					"text" : "bach.keys slots"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-177",
 					"maxclass" : "newobj",
@@ -1433,6 +2159,7 @@
 			}
 , 			{
 				"box" : 				{
+					"autoclear" : 0,
 					"customspacing" : 2,
 					"fontface" : 0,
 					"fontname" : "Arial",
@@ -1441,6 +2168,7 @@
 					"id" : "obj-118",
 					"inset" : 5,
 					"keys" : [ "C" ],
+					"linknotecolortoslot" : 1,
 					"loop" : [ 0.0, 0.0 ],
 					"maxclass" : "bach.roll",
 					"notecolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
@@ -1449,20 +2177,21 @@
 					"numvoices" : 1,
 					"out" : "nnnnnnn",
 					"outlettype" : [ "", "", "", "", "", "", "", "bang" ],
-					"patching_rect" : [ 249.0, 894.0, 1107.0, 101.0 ],
+					"patching_rect" : [ 249.0, 984.0, 1107.0, 101.0 ],
 					"pitcheditrange" : [ "null" ],
+					"playmode" : 0,
 					"presentation" : 1,
-					"presentation_rect" : [ 23.0, 445.0, 1107.0, 191.0 ],
+					"presentation_rect" : [ 27.0, 445.0, 1107.0, 191.0 ],
 					"showaccidentalspreferences" : 1,
 					"stafflines" : [ 5 ],
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"velocityhandling" : 2,
+					"velocityhandling" : 1,
 					"versionnumber" : 7900,
 					"voicenames" : [ "(", ")" ],
 					"voicenamesalign" : 0,
 					"voicespacing" : [ 50.0, 17.0 ],
 					"vzoom" : 120.0,
-					"whole_roll_data_0000000000" : [ "roll", "(", "slotinfo", "(", 1, "(", "name", "amplitude envelope", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", ")", "(", 2, "(", "name", "slot function", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", ")", "(", 3, "(", "name", "slot intlist", ")", "(", "type", "intlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 4, "(", "name", "slot floatlist", ")", "(", "type", "floatlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 5, "(", "name", "slot int", ")", "(", "type", "int", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 6, "(", "name", "slot float", ")", "(", "type", "float", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 7, "(", "name", "lyrics", ")", "(", "type", "text", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 8, "(", "name", "filelist", ")", "(", "type", "filelist", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080213504, ")", "(", "height", "auto", ")", ")", "(", 9, "(", "name", "spat", ")", "(", "type", "spat", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1076101120, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", ")", "(", 10, "(", "name", "slot 10", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 11, "(", "name", "slot 11", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 12, "(", "name", "slot 12", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 13, "(", "name", "slot 13", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 14, "(", "name", "slot 14", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 15, "(", "name", "slot 15", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 16, "(", "name", "slot 16", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 17, "(", "name", "slot 17", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 18, "(", "name", "slot 18", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 19, "(", "name", "slot 19", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 20, "(", "name", "slot 20", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 21, "(", "name", "slot 21", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 22, "(", "name", "slot 22", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 23, "(", "name", "slot 23", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 24, "(", "name", "slot 24", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 25, "(", "name", "slot 25", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 26, "(", "name", "slot 26", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 27, "(", "name", "slot 27", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 28, "(", "name", "slot 28", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 29, "(", "name", "slot 29", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 30, "(", "name", "slot 30", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", ")", "(", "commands", "(", 1, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 2, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 3, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 4, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 5, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", ")", "(", "groups", ")", "(", "markers", ")", "(", "midichannels", 1, ")", "(", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086412800, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 70, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081671680, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1082081280, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1083222698, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086627840, "_x_x_x_x_bach_float64_x_x_x_x_", 21848, 1080350037, 110, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21846, 1083393365, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1084322474, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21846, 1084685141, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, "_x_x_x_x_bach_float64_x_x_x_x_", 65520, 1080623103, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1084787541, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1082081280, 110, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1085227008, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, "_x_x_x_x_bach_float64_x_x_x_x_", 21856, 1080350037, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1085294250, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, "_x_x_x_x_bach_float64_x_x_x_x_", 21824, 1080350037, 110, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1085336917, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086178304, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, 50, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1085368917, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1082081280, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1085496917, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 50, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1085560917, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086412800, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1085688917, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, "_x_x_x_x_bach_float64_x_x_x_x_", 21856, 1080350037, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1085731584, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 110, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086275584, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086332160, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086460160, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, "_x_x_x_x_bach_float64_x_x_x_x_", 21824, 1080350037, 50, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1086481493, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086249984, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1086609493, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1086705493, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086609920, "_x_x_x_x_bach_float64_x_x_x_x_", 21888, 1080350037, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1086726826, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086321664, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 70, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1086758826, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086538240, "_x_x_x_x_bach_float64_x_x_x_x_", 21824, 1080350037, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086805760, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078525952, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086812160, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086538240, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1086902826, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086321664, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1086928426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086538240, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1082081280, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1087013760, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1082081280, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1087077760, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, "_x_x_x_x_bach_float64_x_x_x_x_", 21824, 1080350037, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1087099093, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086538240, "_x_x_x_x_bach_float64_x_x_x_x_", 21824, 1080350037, 110, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43690, 1087120426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, "_x_x_x_x_bach_float64_x_x_x_x_", 64, 1080623104, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1087146026, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, "_x_x_x_x_bach_float64_x_x_x_x_", 21824, 1080350037, 90, 0, ")", 0, ")", 0, ")" ],
+					"whole_roll_data_0000000000" : [ "roll", "(", "slotinfo", "(", 1, "(", "name", "amplitude envelope", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", ")", "(", 2, "(", "name", "slot function", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", ")", "(", 3, "(", "name", "slot intlist", ")", "(", "type", "intlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 4, "(", "name", "slot floatlist", ")", "(", "type", "floatlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 5, "(", "name", "slot int", ")", "(", "type", "int", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 6, "(", "name", "slot float", ")", "(", "type", "float", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 7, "(", "name", "lyrics", ")", "(", "type", "text", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 8, "(", "name", "filelist", ")", "(", "type", "filelist", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080213504, ")", "(", "height", "auto", ")", ")", "(", 9, "(", "name", "spat", ")", "(", "type", "spat", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1076101120, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", ")", "(", 10, "(", "name", "slot 10", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 11, "(", "name", "slot 11", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 12, "(", "name", "slot 12", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 13, "(", "name", "slot 13", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 14, "(", "name", "slot 14", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 15, "(", "name", "slot 15", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 16, "(", "name", "slot 16", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 17, "(", "name", "slot 17", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 18, "(", "name", "slot 18", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 19, "(", "name", "slot 19", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 20, "(", "name", "slot 20", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 21, "(", "name", "slot 21", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 22, "(", "name", "slot 22", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 23, "(", "name", "slot 23", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 24, "(", "name", "slot 24", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 25, "(", "name", "slot 25", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 26, "(", "name", "slot 26", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 27, "(", "name", "slot 27", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 28, "(", "name", "slot 28", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 29, "(", "name", "slot 29", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 30, "(", "name", "slot 30", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", ")", "(", "commands", "(", 1, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 2, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 3, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 4, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 5, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", ")", "(", "groups", ")", "(", "markers", ")", "(", "midichannels", 1, ")", "(", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081569280, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1082259456, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, "_x_x_x_x_bach_float64_x_x_x_x_", 21848, 1080350037, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21846, 1082600789, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, "_x_x_x_x_bach_float64_x_x_x_x_", 21844, 1080350037, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1082942122, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, "_x_x_x_x_bach_float64_x_x_x_x_", 8, 1079984128, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083359232, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083487232, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1082081280, 50, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083999232, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1084625408, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, "_x_x_x_x_bach_float64_x_x_x_x_", 21840, 1080350037, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1084710741, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1085227008, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086285824, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1085283584, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1085358250, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086556160, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1085409450, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1085460650, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1085716650, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1082081280, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1085844650, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21846, 1086015317, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086275584, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, "_x_x_x_x_bach_float64_x_x_x_x_", 21856, 1080350037, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1086318250, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, "_x_x_x_x_bach_float64_x_x_x_x_", 65504, 1081032703, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1086353493, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 70, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1086481493, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, "_x_x_x_x_bach_float64_x_x_x_x_", 21888, 1080350037, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1086502826, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086574080, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 110, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1086528426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1086560426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, "_x_x_x_x_bach_float64_x_x_x_x_", 65520, 1083129855, 70, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43690, 1086688426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, "_x_x_x_x_bach_float64_x_x_x_x_", 21856, 1083061589, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086837760, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 70, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086965760, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, "_x_x_x_x_bach_float64_x_x_x_x_", 21824, 1080350037, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1086987093, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 70, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43690, 1087136426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43690, 1087152426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43690, 1087184426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086285824, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1087237760, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1087269760, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081774080, 90, 0, ")", 0, ")", 0, ")" ],
 					"whole_roll_data_count" : [ 1 ],
 					"zoom" : 80.0
 				}
@@ -1502,7 +2231,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 109.0, 676.0, 150.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 135.0, 2.0, 150.0, 20.0 ],
+					"presentation_rect" : [ 198.0, 81.0, 150.0, 20.0 ],
 					"style" : "",
 					"text" : "Dedicated to Alice Bennett"
 				}
@@ -1517,7 +2246,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 77.0, 48.0, 740.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 23.0, 67.0, 245.0, 29.0 ],
+					"presentation_rect" : [ 23.0, 61.0, 245.0, 29.0 ],
 					"style" : "",
 					"text" : "Vincent Giles, 2016-17",
 					"textcolor" : [ 0.011765, 0.396078, 0.752941, 1.0 ]
@@ -1533,7 +2262,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 62.0, 33.0, 490.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 23.0, 44.0, 162.0, 21.0 ],
+					"presentation_rect" : [ 23.0, 41.0, 162.0, 21.0 ],
 					"style" : "",
 					"text" : "For any treble instrument",
 					"textcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
@@ -1651,6 +2380,7 @@
 					"id" : "obj-8",
 					"keys" : [ "C" ],
 					"leveltobeam" : 1,
+					"linknotecolortoslot" : 1,
 					"loop" : [ "(", 1, 1, 0, ")", "(", 1, 1, 0, ")" ],
 					"maxbeamdeltay" : 0,
 					"maxclass" : "bach.score",
@@ -1672,12 +2402,12 @@
 					"slashgracebeams" : 0,
 					"stafflines" : [ 5 ],
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"velocityhandling" : 2,
+					"velocityhandling" : 1,
 					"versionnumber" : 7900,
 					"voicenames" : [ "(", ")" ],
 					"voicespacing" : [ 28.0, 26.0 ],
 					"vzoom" : 90.0,
-					"whole_score_data_0000000000" : [ "score", "(", "slotinfo", "(", 1, "(", "name", "amplitude envelope", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 2, "(", "name", "slot function", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 3, "(", "name", "slot intlist", ")", "(", "type", "intlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 4, "(", "name", "slot floatlist", ")", "(", "type", "floatlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 5, "(", "name", "slot int", ")", "(", "type", "int", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 6, "(", "name", "slot float", ")", "(", "type", "float", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 7, "(", "name", "lyrics", ")", "(", "type", "text", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 8, "(", "name", "filelist", ")", "(", "type", "filelist", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080213504, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 9, "(", "name", "spat", ")", "(", "type", "spat", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1076101120, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 10, "(", "name", "slot 10", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 11, "(", "name", "slot 11", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 12, "(", "name", "slot 12", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 13, "(", "name", "slot 13", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 14, "(", "name", "slot 14", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 15, "(", "name", "slot 15", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 16, "(", "name", "slot 16", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 17, "(", "name", "slot 17", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 18, "(", "name", "slot 18", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 19, "(", "name", "slot 19", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 20, "(", "name", "slot 20", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 21, "(", "name", "slot 21", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 22, "(", "name", "slot 22", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 23, "(", "name", "slot 23", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 24, "(", "name", "slot 24", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 25, "(", "name", "slot 25", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 26, "(", "name", "slot 26", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 27, "(", "name", "slot 27", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 28, "(", "name", "slot 28", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 29, "(", "name", "slot 29", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 30, "(", "name", "slot 30", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", ")", "(", "commands", "(", 1, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 2, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 3, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 4, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 5, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", ")", "(", "markers", ")", "(", "midichannels", 1, ")", "(", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 282, ")", "(", "tupletinfo", "4/5", "1/32", 1, 2, ")", "(", "(", "leveltype", 2, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086412800, 10, 0, 0, ")", "(", "articulations", "tr", ")", 0, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, 70, 0, 0, ")", "(", "articulations", "port", ")", 0, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, 10, 1, 0, ")", "(", "articulations", "acc", ")", 0, ")", ")", "(", "1/10", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, 10, 0, 0, ")", 0, ")", "(", "-1/40", "(", "articulations", "tr", ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "(", "leveltype", 2, ")", "(", "-1/60", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086627840, 110, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086627840, 110, 0, 0, ")", 0, ")", ")", "(", "1/15", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 10, 1, 0, ")", "(", "articulations", "port", ")", 0, ")", ")", "(", "1/8", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 10, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 10, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 10, 0, 0, ")", 0, ")", "(", "1/240", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, 90, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, 90, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, 90, 0, 0, ")", 0, ")", "(", "-1/15", "(", "articulations", "stacc", ")", 0, ")", ")", ")", "(", "(", "leveltype", 18, ")", "(", "-1/30", 0, ")", "(", "-1/120", 0, ")", "(", "-1/160", 0, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 90, 1, 0, ")", "(", "articulations", "port", ")", 0, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 90, 1, 0, ")", 0, ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 274, ")", "(", "tupletinfo", "8/15", "1/256", 1, 6, ")", "(", "(", "leveltype", 2, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 90, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 90, 0, 0, ")", 0, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 110, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 110, 1, 0, ")", 0, ")", ")", ")", "(", "1/15", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 110, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 110, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 110, 0, 0, ")", 0, ")", "(", "-1/40", 0, ")", "(", "-1/480", 0, ")", ")", ")", ")", "(", "-1/16", 0, ")", ")", 0, ")", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 282, ")", "(", "tupletinfo", "2/3", "1/64", 1, 8, ")", "(", "(", "leveltype", 2, ")", "(", "1/24", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 90, 0, 0, ")", "(", "articulations", "tr", ")", 0, ")", "(", "1/24", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, 110, 0, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086178304, 50, 0, 0, ")", "(", "articulations", "tr", ")", 0, ")", "(", "1/96", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 1, 0, ")", "(", "articulations", "acc", ")", 0, ")", ")", ")", "(", "1/12", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 0, 0, ")", 0, ")", "(", "1/96", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, 50, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 274, ")", "(", "tupletinfo", "2/3", "1/64", 1, 4, ")", "(", "1/24", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, 50, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/96", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, 50, 0, 0, ")", 0, ")", "(", "1/96", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086412800, 30, 1, 0, ")", "(", "articulations", "grupp", ")", 0, ")", ")", "(", "1/24", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086412800, 30, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/96", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086412800, 30, 0, 0, ")", 0, ")", "(", "-1/96", "(", "articulations", "trem", ")", 0, ")", ")", ")", "(", "(", "leveltype", 2, ")", "(", "(", "leveltype", 18, ")", "(", "-1/24", 0, ")", "(", "-1/96", 0, ")", "(", "1/96", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 127, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", "(", "1/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 127, 0, 0, ")", 0, ")", "(", "1/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 110, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "1/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 110, 0, 0, ")", 0, ")", "(", "-3/32", 0, ")", "(", "-1/8", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "-1/4", 0, ")", ")", 0, ")", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 8, ")", "(", "1/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 90, 0, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "3/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 30, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "1/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 30, 0, 0, ")", 0, ")", "(", "(", "leveltype", 18, ")", "(", "1/24", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 50, 0, 0, ")", "(", "articulations", "grupp", ")", 0, ")", "(", "1/48", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086249984, 90, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", ")", "(", "1/8", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086249984, 90, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/12", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086249984, 90, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/48", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086249984, 90, 0, 0, ")", 0, ")", "(", "1/48", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, 90, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/24", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, 90, 0, 0, ")", 0, ")", "(", "-1/12", "(", "articulations", "trem", ")", 0, ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "-1/24", 0, ")", "(", "1/24", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086609920, 127, 0, 0, ")", "(", "articulations", "stacc", ")", 0, ")", "(", "1/24", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086321664, 70, 1, 0, ")", "(", "articulations", "ferm", ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/48", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086321664, 70, 0, 0, ")", 0, ")", "(", "1/24", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086538240, 90, 0, 0, ")", "(", "articulations", "stacc", ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "-1/20", "(", "articulations", "grupp", ")", 0, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, 90, 0, 0, ")", "(", "articulations", "acc", ")", 0, ")", ")", ")", 0, ")", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 8, ")", "(", "1/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086538240, 10, 0, 0, ")", "(", "articulations", "grupp", ")", 0, ")", "(", "(", "leveltype", 274, ")", "(", "tupletinfo", "8/15", "1/256", 1, 6, ")", "(", "(", "leveltype", 2, ")", "(", "-1/10", "(", "articulations", "acc", ")", 0, ")", "(", "-1/120", 0, ")", "(", "-1/160", 0, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086321664, 30, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086321664, 30, 1, 0, ")", 0, ")", ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086321664, 30, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086321664, 30, 0, 0, ")", 0, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086538240, 10, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086538240, 10, 1, 0, ")", 0, ")", ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/10", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086538240, 10, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086538240, 10, 0, 0, ")", 0, ")", "(", "-1/60", "(", "articulations", "port", ")", 0, ")", "(", "-1/160", 0, ")", ")", ")", "(", "(", "leveltype", 2, ")", "(", "(", "leveltype", 18, ")", "(", "-3/160", 0, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, 10, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", "(", "3/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, 10, 1, 0, ")", 0, ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, 10, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, 10, 0, 0, ")", 0, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, 127, 1, 0, ")", "(", "articulations", "ferm", ")", 0, ")", ")", ")", "(", "(", "leveltype", 18, ")", "(", "(", "leveltype", 2, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, 127, 1, 0, ")", 0, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, 127, 0, 0, ")", 0, ")", ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086538240, 110, 1, 0, ")", "(", "articulations", "grupp", ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086538240, 110, 0, 0, ")", 0, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 10, 0, 0, ")", "(", "articulations", "stacc", ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 90, 1, 0, ")", "(", "articulations", "port", ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 90, 0, 0, ")", 0, ")", "(", "-1/40", 0, ")", ")", ")", "(", "-1/32", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "-1/4", 0, ")", ")", 0, ")", 0, ")" ],
+					"whole_score_data_0000000000" : [ "score", "(", "slotinfo", "(", 1, "(", "name", "amplitude envelope", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 2, "(", "name", "slot function", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 3, "(", "name", "slot intlist", ")", "(", "type", "intlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 4, "(", "name", "slot floatlist", ")", "(", "type", "floatlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 5, "(", "name", "slot int", ")", "(", "type", "int", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 6, "(", "name", "slot float", ")", "(", "type", "float", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 7, "(", "name", "lyrics", ")", "(", "type", "text", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 8, "(", "name", "filelist", ")", "(", "type", "filelist", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080213504, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 9, "(", "name", "spat", ")", "(", "type", "spat", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1076101120, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 10, "(", "name", "slot 10", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 11, "(", "name", "slot 11", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 12, "(", "name", "slot 12", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 13, "(", "name", "slot 13", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 14, "(", "name", "slot 14", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 15, "(", "name", "slot 15", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 16, "(", "name", "slot 16", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 17, "(", "name", "slot 17", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 18, "(", "name", "slot 18", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 19, "(", "name", "slot 19", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 20, "(", "name", "slot 20", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 21, "(", "name", "slot 21", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 22, "(", "name", "slot 22", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 23, "(", "name", "slot 23", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 24, "(", "name", "slot 24", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 25, "(", "name", "slot 25", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 26, "(", "name", "slot 26", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 27, "(", "name", "slot 27", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 28, "(", "name", "slot 28", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 29, "(", "name", "slot 29", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 30, "(", "name", "slot 30", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", ")", "(", "commands", "(", 1, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 2, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 3, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 4, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 5, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", ")", "(", "markers", ")", "(", "midichannels", 1, ")", "(", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 2, ")", "(", "-1/32", "(", "articulations", "stacc", ")", 0, ")", "(", "1/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 0, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, 30, 0, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 1, 0, ")", "(", "articulations", "staccmo", ")", 0, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 0, 0, ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, 90, 1, 0, ")", "(", "articulations", "grupp", ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, 90, 0, 0, ")", 0, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 1, 0, ")", "(", "articulations", "grupp", ")", 0, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 1, 0, ")", 0, ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "(", "leveltype", 2, ")", "(", "(", "leveltype", 2, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 0, 0, ")", 0, ")", "(", "-1/30", "(", "articulations", "acc", ")", 0, ")", "(", "-1/120", 0, ")", ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 0, 0, ")", 0, ")", ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 50, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 50, 1, 0, ")", 0, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 50, 1, 0, ")", 0, ")", ")", ")", "(", "(", "leveltype", 18, ")", "(", "3/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 50, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 50, 0, 0, ")", 0, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", "(", "3/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", 0, ")", ")", ")", ")", "(", "(", "leveltype", 24, ")", "(", "1/5", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 0, 0, ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, 90, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, 90, 0, 0, ")", 0, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", "(", "articulations", "grupp", ")", 0, ")", ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 0, 0, ")", 0, ")", "(", "-1/480", 0, ")", ")", ")", ")", "(", "-3/16", 0, ")", ")", 0, ")", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 2, ")", "(", "1/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086285824, 127, 0, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 0, 0, ")", "(", "articulations", "mart", ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "-1/30", "(", "articulations", "trem", ")", 0, ")", "(", "-1/120", 0, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086556160, 127, 0, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, 30, 1, 0, ")", "(", "articulations", "acc", ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, 30, 0, 0, ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", 0, ")", ")", ")", "(", "(", "leveltype", 24, ")", "(", "1/5", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/240", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 0, 0, ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, 90, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, 90, 1, 0, ")", 0, ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/15", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, 90, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, 90, 0, 0, ")", 0, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 0, 0, ")", 0, ")", "(", "-1/120", "(", "articulations", "tr", ")", 0, ")", "(", "-1/160", 0, ")", ")", ")", ")", "(", "(", "leveltype", 18, ")", "(", "-1/15", 0, ")", "(", "-1/20", 0, ")", "(", "-1/240", 0, ")", "(", "1/240", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 0, 0, ")", 0, ")", "(", "-1/15", 0, ")", ")", ")", "(", "-1/8", 0, ")", ")", 0, ")", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 274, ")", "(", "tupletinfo", "2/3", "1/32", 1, 2, ")", "(", "1/24", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, 90, 0, 0, ")", "(", "articulations", "acc", ")", 0, ")", "(", "1/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 0, 0, ")", 0, ")", "(", "1/48", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", ")", "(", "1/8", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/12", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/48", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 0, 0, ")", 0, ")", "(", "1/48", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", ")", "(", "(", "leveltype", 2, ")", "(", "(", "leveltype", 18, ")", "(", "(", "leveltype", 2, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 1, 0, ")", 0, ")", "(", "1/240", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 0, 0, ")", 0, ")", ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086574080, 110, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086574080, 110, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086574080, 110, 0, 0, ")", 0, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", "(", "1/240", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", 0, ")", ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 0, 0, ")", 0, ")", "(", "1/15", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", 0, ")", ")", "(", "1/8", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 0, 0, ")", 0, ")", "(", "1/15", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", 0, ")", ")", "(", "1/8", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 0, 0, ")", 0, ")", ")", 0, ")", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 24, ")", "(", "-1/20", "(", "articulations", "staccmo", ")", 0, ")", "(", "1/5", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", "(", "articulations", "acc", ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 0, 0, ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 1, 0, ")", "(", "articulations", "grupp", ")", 0, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 0, 0, ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", "(", "1/8", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/15", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 0, 0, ")", 0, ")", "(", "-1/30", "(", "articulations", "tr", ")", 0, ")", ")", ")", "(", "(", "leveltype", 2, ")", "(", "(", "leveltype", 18, ")", "(", "-1/120", 0, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 0, 0, ")", 0, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, 127, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/240", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, 127, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, 127, 0, 0, ")", 0, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086285824, 127, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086285824, 127, 1, 0, ")", 0, ")", ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 2, ")", "(", "(", "leveltype", 18, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086285824, 127, 0, 0, ")", 0, ")", "(", "-1/60", "(", "articulations", "acc", ")", 0, ")", "(", "-1/160", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "-1/20", 0, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", "(", "articulations", "grupp", ")", 0, ")", ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 0, 0, ")", 0, ")", "(", "3/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, 90, 1, 0, ")", "(", "articulations", "grupp", ")", 0, ")", ")", "(", "1/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, 90, 0, 0, ")", 0, ")", ")", 0, ")", 0, ")" ],
 					"whole_score_data_count" : [ 1 ],
 					"zoom" : 129.139984
 				}
@@ -2436,7 +3166,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 396.0, 548.0, 106.0, 22.0 ],
 					"style" : "",
-					"text" : "velocityhandling 2"
+					"text" : "velocityhandling 1"
 				}
 
 			}
@@ -2481,9 +3211,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 939.0, 648.0, 150.0, 33.0 ],
-					"presentation" : 1,
-					"presentation_linecount" : 2,
-					"presentation_rect" : [ 1170.0, 340.0, 150.0, 33.0 ],
 					"style" : "",
 					"text" : "make the staff split each bar"
 				}
@@ -4326,7 +5053,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 592.0, 394.0, 150.0, 22.0 ],
+					"patching_rect" : [ 483.0, 360.0, 150.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -4967,7 +5694,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 23.0, 175.0, 325.0, 23.0 ],
 					"style" : "",
-					"text" : "#alice",
+					"text" : "#auspol",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -5257,7 +5984,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 904.0, 422.0, 66.0, 22.0 ],
+					"patching_rect" : [ 904.0, 418.0, 66.0, 22.0 ],
 					"style" : "",
 					"text" : "bach.wrap"
 				}
@@ -5771,6 +6498,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-68",
+					"int" : 1,
 					"maxclass" : "gswitch2",
 					"numinlets" : 2,
 					"numoutlets" : 2,
@@ -5893,21 +6621,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 723.0, 426.0, 66.0, 22.0 ],
+					"patching_rect" : [ 723.0, 399.0, 66.0, 22.0 ],
 					"style" : "",
 					"text" : "bach.wrap"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-65",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 816.0, 434.0, 34.0, 22.0 ],
-					"style" : "",
-					"text" : "print"
 				}
 
 			}
@@ -6199,7 +6915,7 @@
 					"bordercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
 					"id" : "obj-4",
 					"keymode" : 1,
-					"linecount" : 3,
+					"linecount" : 4,
 					"maxclass" : "textedit",
 					"numinlets" : 1,
 					"numoutlets" : 4,
@@ -6207,10 +6923,10 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 249.0, 93.0, 251.0, 26.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 2,
+					"presentation_linecount" : 3,
 					"presentation_rect" : [ 27.0, 223.0, 474.0, 67.0 ],
 					"style" : "",
-					"text" : "\"I'm playing Alice's Wonderland on my iPad, on the app store: https://t.co/HqpmKHnO9m #Alice #Reflex https://t.co/WtJaI8X3cc\"",
+					"text" : "\"The political elite are living it up as if they were royalty, while they screw the Aussie battler over!\n#auspol https://t.co/D1nPZhFgp0\"",
 					"textcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
 				}
 
@@ -6559,6 +7275,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-159", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-134", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-136", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -6599,6 +7324,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-139", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-181", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-14", 0 ]
 				}
 
 			}
@@ -6800,6 +7534,24 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-134", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-159", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-82", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-159", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -6841,6 +7593,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-161", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-159", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-162", 0 ]
 				}
 
 			}
@@ -6986,6 +7747,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-177", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-181", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-179", 0 ]
 				}
 
 			}
@@ -7478,7 +8248,7 @@
 					"destination" : [ "obj-8", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 601.5, 450.0, 414.0, 450.0, 414.0, 678.0, 258.5, 678.0 ],
+					"midpoints" : [ 492.5, 450.0, 414.0, 450.0, 414.0, 678.0, 258.5, 678.0 ],
 					"source" : [ "obj-54", 0 ]
 				}
 
@@ -7702,7 +8472,6 @@
 					"destination" : [ "obj-8", 3 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 732.5, 450.0, 802.5, 450.0 ],
 					"source" : [ "obj-73", 0 ]
 				}
 
@@ -7757,7 +8526,6 @@
 					"destination" : [ "obj-8", 3 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 913.5, 678.0, 802.5, 678.0 ],
 					"source" : [ "obj-78", 0 ]
 				}
 
@@ -7778,6 +8546,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-162", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-8", 6 ]
 				}
 
 			}
@@ -7807,6 +8584,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-81", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-118", 5 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-82", 0 ]
 				}
 
 			}
@@ -8043,6 +8829,12 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "bach.prepend.maxpat",
+				"bootpath" : "~/Documents/Max 7/Packages/bach/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "bach.expr.mxo",
 				"type" : "iLaX"
 			}
@@ -8112,6 +8904,10 @@
 			}
 , 			{
 				"name" : "bach.print.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "bach.keys.mxo",
 				"type" : "iLaX"
 			}
  ],
