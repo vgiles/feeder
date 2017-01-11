@@ -5,11 +5,11 @@
 			"major" : 7,
 			"minor" : 3,
 			"revision" : 1,
-			"architecture" : "x64",
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 190.0, 232.0, 1147.0, 649.0 ],
+		"rect" : [ 144.0, 170.0, 1147.0, 649.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,17 +40,48 @@
 		"title" : "Vincent Giles - Feeder",
 		"boxes" : [ 			{
 				"box" : 				{
-					"bubble" : 1,
-					"bubblepoint" : 0.6,
-					"id" : "obj-65",
+					"fontsize" : 10.0,
+					"id" : "obj-176",
+					"linecount" : 6,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 120.0, 147.0, 150.0, 24.0 ],
+					"patching_rect" : [ 940.0, 253.0, 136.0, 74.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 176.0, 198.0, 150.0, 24.0 ],
+					"presentation_linecount" : 4,
+					"presentation_rect" : [ 911.0, 239.0, 227.0, 51.0 ],
 					"style" : "",
-					"text" : "Jitter Render"
+					"text" : "Check box enables tweet rendering in floating window. The \"F\" key enables/disables fullscrene mode. Be sure to move window onto second display.",
+					"textcolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 18.0,
+					"id" : "obj-106",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 885.0, 230.0, 219.0, 27.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 864.0, 219.0, 135.0, 27.0 ],
+					"style" : "",
+					"text" : "Tweet Display",
+					"textcolor" : [ 0.960784, 0.827451, 0.156863, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-175",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 1786.0, 220.0, 48.0, 22.0 ],
+					"style" : "",
+					"text" : "+ 5000"
 				}
 
 			}
@@ -66,7 +97,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -97,8 +128,59 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-29",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 74.0, 168.0, 79.0, 22.0 ],
+									"style" : "",
+									"text" : "fullscreen $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-26",
+									"maxclass" : "toggle",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 84.0, 117.0, 24.0, 24.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-11",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
+									"patching_rect" : [ 84.0, 87.0, 49.0, 22.0 ],
+									"style" : "",
+									"text" : "sel 102"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 4,
+									"outlettype" : [ "int", "int", "int", "int" ],
+									"patching_rect" : [ 84.0, 57.0, 50.5, 22.0 ],
+									"style" : "",
+									"text" : "keyup"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-5",
 									"maxclass" : "newobj",
@@ -177,9 +259,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 25.0, 319.0, 196.0, 23.0 ],
+									"patching_rect" : [ 25.0, 319.0, 265.0, 23.0 ],
 									"style" : "",
-									"text" : "jit.window twitter @size 600 150"
+									"text" : "jit.window twitter @size 600 150 @floating 0"
 								}
 
 							}
@@ -503,6 +585,15 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-26", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -579,6 +670,33 @@
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-25", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-29", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-26", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-29", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-11", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-3", 0 ]
 								}
 
 							}
@@ -691,6 +809,8 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.721195, 0.723978, 0.03182, 1.0 ],
+					"checkedcolor" : [ 0.862745, 0.741176, 0.137255, 1.0 ],
 					"id" : "obj-179",
 					"maxclass" : "toggle",
 					"numinlets" : 1,
@@ -699,7 +819,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 396.0, 147.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 150.0, 198.0, 24.0, 24.0 ],
+					"presentation_rect" : [ 864.0, 248.0, 42.0, 42.0 ],
 					"style" : ""
 				}
 
@@ -991,7 +1111,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -1509,7 +1629,7 @@
 					"patching_rect" : [ 1820.0, 63.5, 150.0, 47.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 2,
-					"presentation_rect" : [ 848.0, 227.5, 182.0, 33.0 ],
+					"presentation_rect" : [ 665.0, 212.5, 182.0, 33.0 ],
 					"style" : "",
 					"text" : "change roughly how often? (seconds, 20 is good)"
 				}
@@ -1518,15 +1638,16 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.721195, 0.723978, 0.03182, 1.0 ],
+					"fontsize" : 18.0,
 					"id" : "obj-121",
 					"maxclass" : "number",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1823.5, 125.0, 50.0, 22.0 ],
+					"patching_rect" : [ 1823.5, 125.0, 59.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 851.5, 261.5, 105.0, 22.0 ],
+					"presentation_rect" : [ 668.5, 261.5, 124.0, 29.0 ],
 					"style" : "",
 					"textcolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ]
 				}
@@ -1555,7 +1676,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 1764.0, 232.0, 41.0, 22.0 ],
+					"patching_rect" : [ 1764.0, 253.0, 41.0, 22.0 ],
 					"style" : "",
 					"text" : "metro"
 				}
@@ -1570,7 +1691,7 @@
 					"outlettype" : [ "int" ],
 					"patching_rect" : [ 1786.0, 188.0, 94.0, 22.0 ],
 					"style" : "",
-					"text" : "drunk 5000 127"
+					"text" : "drunk 5000 750"
 				}
 
 			}
@@ -1613,7 +1734,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -2181,7 +2302,7 @@
 					"pitcheditrange" : [ "null" ],
 					"playmode" : 0,
 					"presentation" : 1,
-					"presentation_rect" : [ 27.0, 445.0, 1107.0, 191.0 ],
+					"presentation_rect" : [ 27.0, 445.0, 1116.0, 191.0 ],
 					"showaccidentalspreferences" : 1,
 					"stafflines" : [ 5 ],
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -2191,7 +2312,7 @@
 					"voicenamesalign" : 0,
 					"voicespacing" : [ 50.0, 17.0 ],
 					"vzoom" : 120.0,
-					"whole_roll_data_0000000000" : [ "roll", "(", "slotinfo", "(", 1, "(", "name", "amplitude envelope", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", ")", "(", 2, "(", "name", "slot function", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", ")", "(", 3, "(", "name", "slot intlist", ")", "(", "type", "intlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 4, "(", "name", "slot floatlist", ")", "(", "type", "floatlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 5, "(", "name", "slot int", ")", "(", "type", "int", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 6, "(", "name", "slot float", ")", "(", "type", "float", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 7, "(", "name", "lyrics", ")", "(", "type", "text", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 8, "(", "name", "filelist", ")", "(", "type", "filelist", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080213504, ")", "(", "height", "auto", ")", ")", "(", 9, "(", "name", "spat", ")", "(", "type", "spat", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1076101120, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", ")", "(", 10, "(", "name", "slot 10", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 11, "(", "name", "slot 11", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 12, "(", "name", "slot 12", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 13, "(", "name", "slot 13", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 14, "(", "name", "slot 14", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 15, "(", "name", "slot 15", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 16, "(", "name", "slot 16", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 17, "(", "name", "slot 17", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 18, "(", "name", "slot 18", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 19, "(", "name", "slot 19", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 20, "(", "name", "slot 20", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 21, "(", "name", "slot 21", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 22, "(", "name", "slot 22", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 23, "(", "name", "slot 23", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 24, "(", "name", "slot 24", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 25, "(", "name", "slot 25", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 26, "(", "name", "slot 26", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 27, "(", "name", "slot 27", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 28, "(", "name", "slot 28", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 29, "(", "name", "slot 29", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 30, "(", "name", "slot 30", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", ")", "(", "commands", "(", 1, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 2, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 3, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 4, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 5, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", ")", "(", "groups", ")", "(", "markers", ")", "(", "midichannels", 1, ")", "(", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081569280, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1082259456, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, "_x_x_x_x_bach_float64_x_x_x_x_", 21848, 1080350037, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21846, 1082600789, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, "_x_x_x_x_bach_float64_x_x_x_x_", 21844, 1080350037, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1082942122, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, "_x_x_x_x_bach_float64_x_x_x_x_", 8, 1079984128, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083359232, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083487232, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1082081280, 50, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083999232, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1084625408, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, "_x_x_x_x_bach_float64_x_x_x_x_", 21840, 1080350037, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1084710741, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1085227008, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086285824, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1085283584, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1085358250, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086556160, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1085409450, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1085460650, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1085716650, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1082081280, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1085844650, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21846, 1086015317, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086275584, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, "_x_x_x_x_bach_float64_x_x_x_x_", 21856, 1080350037, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1086318250, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, "_x_x_x_x_bach_float64_x_x_x_x_", 65504, 1081032703, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1086353493, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 70, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1086481493, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, "_x_x_x_x_bach_float64_x_x_x_x_", 21888, 1080350037, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1086502826, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086574080, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 110, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1086528426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43691, 1086560426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, "_x_x_x_x_bach_float64_x_x_x_x_", 65520, 1083129855, 70, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43690, 1086688426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, "_x_x_x_x_bach_float64_x_x_x_x_", 21856, 1083061589, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086837760, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 70, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086965760, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, "_x_x_x_x_bach_float64_x_x_x_x_", 21824, 1080350037, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 21845, 1086987093, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 70, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43690, 1087136426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43690, 1087152426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 43690, 1087184426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086285824, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1087237760, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1087269760, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081774080, 90, 0, ")", 0, ")", 0, ")" ],
+					"whole_roll_data_0000000000" : [ "roll", "(", "slotinfo", "(", 1, "(", "name", "amplitude envelope", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", ")", "(", 2, "(", "name", "slot function", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", ")", "(", 3, "(", "name", "slot intlist", ")", "(", "type", "intlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 4, "(", "name", "slot floatlist", ")", "(", "type", "floatlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 5, "(", "name", "slot int", ")", "(", "type", "int", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 6, "(", "name", "slot float", ")", "(", "type", "float", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 7, "(", "name", "lyrics", ")", "(", "type", "text", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 8, "(", "name", "filelist", ")", "(", "type", "filelist", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080213504, ")", "(", "height", "auto", ")", ")", "(", 9, "(", "name", "spat", ")", "(", "type", "spat", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1076101120, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", ")", "(", 10, "(", "name", "slot 10", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 11, "(", "name", "slot 11", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 12, "(", "name", "slot 12", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 13, "(", "name", "slot 13", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 14, "(", "name", "slot 14", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 15, "(", "name", "slot 15", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 16, "(", "name", "slot 16", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 17, "(", "name", "slot 17", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 18, "(", "name", "slot 18", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 19, "(", "name", "slot 19", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 20, "(", "name", "slot 20", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 21, "(", "name", "slot 21", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 22, "(", "name", "slot 22", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 23, "(", "name", "slot 23", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 24, "(", "name", "slot 24", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 25, "(", "name", "slot 25", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 26, "(", "name", "slot 26", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 27, "(", "name", "slot 27", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 28, "(", "name", "slot 28", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 29, "(", "name", "slot 29", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", "(", 30, "(", "name", "slot 30", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", ")", ")", "(", "commands", "(", 1, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 2, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 3, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 4, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 5, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", ")", "(", "groups", ")", "(", "markers", ")", "(", "midichannels", 1, ")", "(", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1082081280, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1082617856, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083922432, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1084178432, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086527999, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1084305408, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086563839, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 70, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1084817408, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1084945408, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1085073408, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081262080, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1085227008, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086563839, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 70, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1085582250, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086510079, "_x_x_x_x_bach_float64_x_x_x_x_", 21824, 1080350037, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1085752917, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086510079, "_x_x_x_x_bach_float64_x_x_x_x_", 21856, 1080350037, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1085795584, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1085859584, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086581759, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1082081280, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1085987584, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086094250, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086617599, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086145450, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086275584, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086510079, "_x_x_x_x_bach_float64_x_x_x_x_", 21856, 1080350037, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086318250, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086456319, "_x_x_x_x_bach_float64_x_x_x_x_", 21856, 1080350037, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086358826, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086390826, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086518826, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086527999, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086544426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086527999, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086570026, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086602026, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086730026, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086563839, "_x_x_x_x_bach_float64_x_x_x_x_", 21840, 1082395989, 70, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086812160, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086940160, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086635519, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080623104, 110, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086965760, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086997760, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086456319, "_x_x_x_x_bach_float64_x_x_x_x_", 21824, 1080350037, 90, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1087019093, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086563839, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1083129856, 70, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1087147093, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086510079, "_x_x_x_x_bach_float64_x_x_x_x_", 21824, 1080350037, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1087168426, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086510079, "_x_x_x_x_bach_float64_x_x_x_x_", 21888, 1080350037, 10, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1087211093, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086402559, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, 30, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1087227093, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1081032704, 127, 0, ")", 0, ")", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1087259093, "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086366719, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079984128, 127, 0, ")", 0, ")", 0, ")" ],
 					"whole_roll_data_count" : [ 1 ],
 					"zoom" : 80.0
 				}
@@ -2321,16 +2442,16 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-72",
-					"linecount" : 30,
+					"linecount" : 52,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 27.0, 526.0, 154.0, 409.0 ],
+					"patching_rect" : [ 27.0, 526.0, 158.0, 704.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 13,
-					"presentation_rect" : [ 358.0, 29.5, 595.0, 181.0 ],
+					"presentation_rect" : [ 358.0, 29.5, 785.0, 181.0 ],
 					"style" : "",
-					"text" : "Rhythm: can be ungainly. Best approximation based on spatial orientation is perfectly acceptable. Set your own tempo, but this should be fairly flexible. This is all about gesture.\n\nDynamic: The more solid the colour, the louder, the more opaque, the softer.\n\nGraphical: May be easier to sight-read, but will require improvised articulations.\n\n1. Be connected to the internet.\n2. Enter a hashtag.\n3. Click the red GO button.\n4. For variations, press rhythm or pitch and rhythm. (Spacebar will activate the latter)\n5 (optional). If you need to set the \"range\" of the piece, use the yellow number box and the instructions above it.",
+					"text" : "General: you can refer to either notation displays, though currently the traditional is rhythmically ungainly and also longer than fits comfortably on-screen, so would advise using the spatial notation at the bottom. The tempo is to be decided by the performer, and interpretations should be loose and gestural. You will notice that there are articulations in the traditional notation but not the spatial: please improvise your own articulations and/or extended techniques based, using the spatial notation as a guide to rhythm, pitch, and dynamic only.\n\nDynamic: The more solid the colour, the louder, the more opaque, the softer. Dynamics exist on a spectrum from 10-127 in increments of 20, this would loosely correspond to ppp, pp, p, mp, mf, f, ff, but feel free to adjust as you see fit\n\n1. Be connected to the internet.\n2. Enter a hashtag (#auspol is a great one)\n3. Click the red GO button.\n4. For variations, enter a value in the right-most number box above the score. A good rough-duration is 20 seconds. Click the blue \"X\".\n5. Set the range to your lowest note (or an any central point), but beware the algorithm may stretch pitches beyond playing range.",
 					"textcolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ]
 				}
 
@@ -2362,7 +2483,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 550.5, 18.0, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 350.0, 2.0, 617.0, 208.5 ],
+					"presentation_rect" : [ 350.0, 2.0, 793.0, 208.5 ],
 					"proportion" : 0.39,
 					"style" : ""
 				}
@@ -2393,7 +2514,7 @@
 					"patching_rect" : [ 249.0, 692.0, 1107.0, 155.0 ],
 					"pitcheditrange" : [ "null" ],
 					"presentation" : 1,
-					"presentation_rect" : [ 27.0, 292.0, 1107.0, 144.0 ],
+					"presentation_rect" : [ 27.0, 292.0, 1116.0, 144.0 ],
 					"restswithinbeaming" : 2,
 					"showaccidentalspreferences" : 1,
 					"showbarlines" : 0,
@@ -2407,7 +2528,7 @@
 					"voicenames" : [ "(", ")" ],
 					"voicespacing" : [ 28.0, 26.0 ],
 					"vzoom" : 90.0,
-					"whole_score_data_0000000000" : [ "score", "(", "slotinfo", "(", 1, "(", "name", "amplitude envelope", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 2, "(", "name", "slot function", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 3, "(", "name", "slot intlist", ")", "(", "type", "intlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 4, "(", "name", "slot floatlist", ")", "(", "type", "floatlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 5, "(", "name", "slot int", ")", "(", "type", "int", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 6, "(", "name", "slot float", ")", "(", "type", "float", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 7, "(", "name", "lyrics", ")", "(", "type", "text", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 8, "(", "name", "filelist", ")", "(", "type", "filelist", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080213504, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 9, "(", "name", "spat", ")", "(", "type", "spat", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1076101120, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 10, "(", "name", "slot 10", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 11, "(", "name", "slot 11", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 12, "(", "name", "slot 12", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 13, "(", "name", "slot 13", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 14, "(", "name", "slot 14", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 15, "(", "name", "slot 15", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 16, "(", "name", "slot 16", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 17, "(", "name", "slot 17", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 18, "(", "name", "slot 18", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 19, "(", "name", "slot 19", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 20, "(", "name", "slot 20", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 21, "(", "name", "slot 21", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 22, "(", "name", "slot 22", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 23, "(", "name", "slot 23", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 24, "(", "name", "slot 24", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 25, "(", "name", "slot 25", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 26, "(", "name", "slot 26", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 27, "(", "name", "slot 27", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 28, "(", "name", "slot 28", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 29, "(", "name", "slot 29", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 30, "(", "name", "slot 30", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", ")", "(", "commands", "(", 1, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 2, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 3, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 4, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 5, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", ")", "(", "markers", ")", "(", "midichannels", 1, ")", "(", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 2, ")", "(", "-1/32", "(", "articulations", "stacc", ")", 0, ")", "(", "1/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 0, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, 30, 0, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 1, 0, ")", "(", "articulations", "staccmo", ")", 0, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 0, 0, ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, 90, 1, 0, ")", "(", "articulations", "grupp", ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, 90, 0, 0, ")", 0, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 1, 0, ")", "(", "articulations", "grupp", ")", 0, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 1, 0, ")", 0, ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "(", "leveltype", 2, ")", "(", "(", "leveltype", 2, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 0, 0, ")", 0, ")", "(", "-1/30", "(", "articulations", "acc", ")", 0, ")", "(", "-1/120", 0, ")", ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 0, 0, ")", 0, ")", ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 50, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 50, 1, 0, ")", 0, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 50, 1, 0, ")", 0, ")", ")", ")", "(", "(", "leveltype", 18, ")", "(", "3/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 50, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086142464, 50, 0, 0, ")", 0, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", "(", "3/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", 0, ")", ")", ")", ")", "(", "(", "leveltype", 24, ")", "(", "1/5", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 0, 0, ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, 90, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, 90, 0, 0, ")", 0, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", "(", "articulations", "grupp", ")", 0, ")", ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 0, 0, ")", 0, ")", "(", "-1/480", 0, ")", ")", ")", ")", "(", "-3/16", 0, ")", ")", 0, ")", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 2, ")", "(", "1/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086285824, 127, 0, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 0, 0, ")", "(", "articulations", "mart", ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "-1/30", "(", "articulations", "trem", ")", 0, ")", "(", "-1/120", 0, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086556160, 127, 0, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, 30, 1, 0, ")", "(", "articulations", "acc", ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086466560, 30, 0, 0, ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", 0, ")", ")", ")", "(", "(", "leveltype", 24, ")", "(", "1/5", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/240", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 0, 0, ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, 90, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, 90, 1, 0, ")", 0, ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/15", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, 90, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, 90, 0, 0, ")", 0, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 0, 0, ")", 0, ")", "(", "-1/120", "(", "articulations", "tr", ")", 0, ")", "(", "-1/160", 0, ")", ")", ")", ")", "(", "(", "leveltype", 18, ")", "(", "-1/15", 0, ")", "(", "-1/20", 0, ")", "(", "-1/240", 0, ")", "(", "1/240", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 0, 0, ")", 0, ")", "(", "-1/15", 0, ")", ")", ")", "(", "-1/8", 0, ")", ")", 0, ")", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 274, ")", "(", "tupletinfo", "2/3", "1/32", 1, 2, ")", "(", "1/24", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086394880, 90, 0, 0, ")", "(", "articulations", "acc", ")", 0, ")", "(", "1/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 0, 0, ")", 0, ")", "(", "1/48", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", ")", "(", "1/8", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/12", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/48", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 0, 0, ")", 0, ")", "(", "1/48", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", ")", "(", "(", "leveltype", 2, ")", "(", "(", "leveltype", 18, ")", "(", "(", "leveltype", 2, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 1, 0, ")", 0, ")", "(", "1/240", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 0, 0, ")", 0, ")", ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086574080, 110, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086574080, 110, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086574080, 110, 0, 0, ")", 0, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", "(", "1/240", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", 0, ")", ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 0, 0, ")", 0, ")", "(", "1/15", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", 0, ")", ")", "(", "1/8", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 0, 0, ")", 0, ")", "(", "1/15", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 1, 0, ")", 0, ")", ")", "(", "1/8", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086070784, 10, 0, 0, ")", 0, ")", ")", 0, ")", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 24, ")", "(", "-1/20", "(", "articulations", "staccmo", ")", 0, ")", "(", "1/5", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", "(", "articulations", "acc", ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 0, 0, ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 1, 0, ")", "(", "articulations", "grupp", ")", 0, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086448640, 10, 0, 0, ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", "(", "1/8", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/15", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086502400, 70, 0, 0, ")", 0, ")", "(", "-1/30", "(", "articulations", "tr", ")", 0, ")", ")", ")", "(", "(", "leveltype", 2, ")", "(", "(", "leveltype", 18, ")", "(", "-1/120", 0, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086341120, 30, 0, 0, ")", 0, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, 127, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/240", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, 127, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086430720, 127, 0, 0, ")", 0, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086285824, 127, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086285824, 127, 1, 0, ")", 0, ")", ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 2, ")", "(", "(", "leveltype", 18, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086285824, 127, 0, 0, ")", 0, ")", "(", "-1/60", "(", "articulations", "acc", ")", 0, ")", "(", "-1/160", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "-1/20", 0, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 1, 0, ")", "(", "articulations", "grupp", ")", 0, ")", ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086214144, 90, 0, 0, ")", 0, ")", "(", "3/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, 90, 1, 0, ")", "(", "articulations", "grupp", ")", 0, ")", ")", "(", "1/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086520320, 90, 0, 0, ")", 0, ")", ")", 0, ")", 0, ")" ],
+					"whole_score_data_0000000000" : [ "score", "(", "slotinfo", "(", 1, "(", "name", "amplitude envelope", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 2, "(", "name", "slot function", ")", "(", "type", "function", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "ysnap", "(", ")", ")", "(", "domain", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "domainslope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 3, "(", "name", "slot intlist", ")", "(", "type", "intlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 4, "(", "name", "slot floatlist", ")", "(", "type", "floatlist", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 5, "(", "name", "slot int", ")", "(", "type", "int", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080016896, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1078984704, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 6, "(", "name", "slot float", ")", "(", "type", "float", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072693248, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "default", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 7, "(", "name", "lyrics", ")", "(", "type", "text", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 8, "(", "name", "filelist", ")", "(", "type", "filelist", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1080213504, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 9, "(", "name", "spat", ")", "(", "type", "spat", ")", "(", "key", 0, ")", "(", "range", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1076101120, ")", "(", "slope", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 0, ")", "(", "representation", ")", "(", "width", "temporal", ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 10, "(", "name", "slot 10", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 11, "(", "name", "slot 11", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 12, "(", "name", "slot 12", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 13, "(", "name", "slot 13", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 14, "(", "name", "slot 14", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 15, "(", "name", "slot 15", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 16, "(", "name", "slot 16", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 17, "(", "name", "slot 17", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 18, "(", "name", "slot 18", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 19, "(", "name", "slot 19", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 20, "(", "name", "slot 20", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 21, "(", "name", "slot 21", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 22, "(", "name", "slot 22", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 23, "(", "name", "slot 23", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 24, "(", "name", "slot 24", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 25, "(", "name", "slot 25", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 26, "(", "name", "slot 26", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 27, "(", "name", "slot 27", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 28, "(", "name", "slot 28", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 29, "(", "name", "slot 29", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", "(", 30, "(", "name", "slot 30", ")", "(", "type", "none", ")", "(", "key", 0, ")", "(", "width", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1079574528, ")", "(", "height", "auto", ")", "(", "singleslotfortiednotes", 1, ")", ")", ")", "(", "commands", "(", 1, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 2, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 3, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 4, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", "(", 5, "(", "note", "note", ")", "(", "chord", "chord", ")", "(", "rest", "rest", ")", "(", "key", 0, ")", ")", ")", "(", "markers", ")", "(", "midichannels", 1, ")", "(", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 8, ")", "(", "1/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, 90, 0, 0, ")", "(", "articulations", "staccmo", ")", 0, ")", "(", "1/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, 127, 0, 0, ")", "(", "articulations", "acc", ")", 0, ")", "(", "1/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, 127, 0, 0, ")", "(", "articulations", "tr", ")", 0, ")", "(", "1/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, 10, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "3/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, 10, 0, 0, ")", 0, ")", "(", "1/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, 90, 0, 0, ")", "(", "articulations", "acc", ")", 0, ")", ")", "(", "(", "leveltype", 24, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086527999, 30, 0, 0, ")", "(", "articulations", "grupp", ")", 0, ")", "(", "1/5", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086563839, 70, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 274, ")", "(", "tupletinfo", "4/5", "1/64", 1, 2, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086563839, 70, 0, 0, ")", 0, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, 90, 1, 0, ")", "(", "articulations", "ferm", ")", 0, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, 90, 0, 0, ")", 0, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, 127, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, 127, 0, 0, ")", 0, ")", "(", "3/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, 10, 0, 0, ")", "(", "articulations", "port", ")", 0, ")", ")", ")", 0, ")", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 8, ")", "(", "1/4", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086563839, 70, 0, 0, ")", "(", "articulations", "grupp", ")", 0, ")", ")", "(", "(", "leveltype", 282, ")", "(", "tupletinfo", "2/3", "1/64", 1, 8, ")", "(", "-1/24", "(", "articulations", "tr", ")", 0, ")", "(", "-1/32", 0, ")", "(", "1/24", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086510079, 10, 0, 0, ")", "(", "articulations", "tr", ")", 0, ")", "(", "-1/12", "(", "articulations", "acc", ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "-1/24", 0, ")", "(", "1/96", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086510079, 10, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 2, ")", "(", "1/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086510079, 10, 0, 0, ")", 0, ")", "(", "1/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, 90, 0, 0, ")", "(", "articulations", "acc", ")", 0, ")", ")", "(", "1/8", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086581759, 90, 0, 0, ")", "(", "articulations", "grupp", ")", 0, ")", "(", "1/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, 127, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "1/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, 127, 0, 0, ")", 0, ")", "(", "(", "leveltype", 18, ")", "(", "-1/30", "(", "articulations", "acc", ")", 0, ")", "(", "-1/120", 0, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086617599, 127, 0, 0, ")", "(", "articulations", "tr", ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, 127, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", ")", "(", "(", "leveltype", 2, ")", "(", "(", "leveltype", 18, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, 127, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, 127, 0, 0, ")", 0, ")", "(", "-1/480", 0, ")", ")", ")", "(", "-1/16", 0, ")", ")", ")", 0, ")", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 274, ")", "(", "tupletinfo", "2/3", "1/64", 1, 6, ")", "(", "1/24", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086510079, 10, 0, 0, ")", "(", "articulations", "tr", ")", 0, ")", "(", "1/24", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086456319, 90, 0, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "-1/32", "(", "articulations", "staccmo", ")", 0, ")", "(", "1/96", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, 90, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", "(", "1/24", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, 90, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/96", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, 90, 0, 0, ")", 0, ")", "(", "1/96", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, 10, 1, 0, ")", "(", "articulations", "stacc", ")", 0, ")", ")", ")", "(", "1/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, 10, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 24, ")", "(", "2/15", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, 10, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, 10, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, 10, 1, 0, ")", 0, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, 10, 0, 0, ")", 0, ")", ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086527999, 30, 0, 0, ")", "(", "articulations", "port", ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086527999, 30, 1, 0, ")", "(", "articulations", "acc", ")", 0, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086527999, 30, 1, 0, ")", 0, ")", ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086527999, 30, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086527999, 30, 0, 0, ")", 0, ")", "(", "1/240", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, 90, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", ")", "(", "(", "leveltype", 18, ")", "(", "(", "leveltype", 2, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, 90, 1, 0, ")", 0, ")", "(", "1/40", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, 90, 0, 0, ")", 0, ")", ")", "(", "1/15", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, 10, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", ")", "(", "3/32", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, 10, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/15", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, 10, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "(", "leveltype", 2, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, 10, 1, 0, ")", 0, ")", "(", "1/160", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, 10, 0, 0, ")", 0, ")", ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086563839, 70, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086563839, 70, 1, 0, ")", 0, ")", ")", ")", "(", "1/8", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086563839, 70, 0, 0, ")", 0, ")", ")", 0, ")", "(", "(", "(", 4, 4, ")", "(", ")", ")", "(", "leveltype", 1, ")", "(", "(", "leveltype", 8, ")", "(", "1/4", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086193663, 10, 0, 0, ")", "(", "articulations", "stacc", ")", 0, ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086635519, 110, 0, 0, ")", "(", "articulations", "tr", ")", 0, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, 90, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/20", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086330879, 90, 0, 0, ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086456319, 90, 1, 0, ")", "(", "articulations", "acc", ")", 0, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086456319, 90, 0, 0, ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086563839, 70, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", "(", "1/16", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086563839, 70, 1, 0, ")", 0, ")", ")", "(", "(", "leveltype", 24, ")", "(", "2/15", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086563839, 70, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "(", "leveltype", 2, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086563839, 70, 1, 0, ")", 0, ")", "(", "1/240", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086563839, 70, 0, 0, ")", 0, ")", ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086510079, 10, 1, 0, ")", "(", "articulations", "acc", ")", 0, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086510079, 10, 0, 0, ")", 0, ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086510079, 10, 1, 0, ")", "(", "articulations", "grupp", ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/120", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086510079, 10, 0, 0, ")", 0, ")", "(", "-1/80", "(", "articulations", "trem", ")", 0, ")", ")", ")", ")", "(", "(", "leveltype", 8, ")", "(", "(", "leveltype", 18, ")", "(", "-1/60", 0, ")", "(", "-1/80", 0, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086402559, 30, 1, 0, ")", "(", "articulations", "acc", ")", 0, ")", ")", "(", "(", "leveltype", 18, ")", "(", "(", "leveltype", 2, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086402559, 30, 1, 0, ")", 0, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086402559, 30, 0, 0, ")", 0, ")", ")", "(", "1/30", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, 127, 1, 0, ")", "(", "articulations", "tr", ")", 0, ")", ")", "(", "(", "leveltype", 2, ")", "(", "(", "leveltype", 18, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, 127, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086492159, 127, 0, 0, ")", 0, ")", "(", "1/480", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086366719, 127, 1, 0, ")", "(", "articulations", "trem", ")", 0, ")", ")", ")", "(", "(", "leveltype", 18, ")", "(", "1/60", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086366719, 127, 1, 0, ")", 0, ")", "(", "(", "leveltype", 2, ")", "(", "1/80", "(", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1086366719, 127, 0, 0, ")", 0, ")", "(", "-1/30", "(", "articulations", "tr", ")", 0, ")", ")", ")", "(", "-1/16", 0, ")", ")", ")", 0, ")", 0, ")" ],
 					"whole_score_data_count" : [ 1 ],
 					"zoom" : 129.139984
 				}
@@ -2465,7 +2586,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -2973,7 +3094,6 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-167",
-					"int" : 1,
 					"maxclass" : "gswitch2",
 					"numinlets" : 2,
 					"numoutlets" : 2,
@@ -3180,7 +3300,7 @@
 					"patching_rect" : [ 550.5, 290.0, 152.0, 47.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 3,
-					"presentation_rect" : [ 689.5, 212.5, 155.0, 47.0 ],
+					"presentation_rect" : [ 506.5, 212.5, 155.0, 47.0 ],
 					"style" : "",
 					"text" : "Set one 8va above lowest note in MIDIC (6000 = C4, 6100 = C#4, etc.)"
 				}
@@ -3189,15 +3309,16 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.880169, 0.755396, 0.471904, 1.0 ],
+					"fontsize" : 18.0,
 					"id" : "obj-146",
 					"maxclass" : "number",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 320.5, 564.0, 50.0, 22.0 ],
+					"patching_rect" : [ 320.5, 564.0, 67.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 689.5, 261.5, 96.0, 22.0 ],
+					"presentation_rect" : [ 506.5, 261.5, 128.0, 29.0 ],
 					"style" : "",
 					"textcolor" : [ 0.372549, 0.196078, 0.486275, 1.0 ]
 				}
@@ -3397,7 +3518,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -4048,7 +4169,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -4305,7 +4426,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "int" ],
 									"patching_rect" : [ 64.0, 40.0, 30.0, 30.0 ],
 									"style" : ""
 								}
@@ -4540,7 +4661,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -5071,7 +5192,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -5807,34 +5928,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-106",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 859.5, 77.0, 150.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 508.5, 234.0, 47.5, 20.0 ],
-					"style" : "",
-					"text" : "rhythm"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-104",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 43.5, 223.0, 150.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 568.5, 234.0, 105.0, 20.0 ],
-					"style" : "",
-					"text" : "pitch and rhythm"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-101",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -5843,20 +5936,6 @@
 					"patching_rect" : [ 174.0, 309.0, 39.0, 22.0 ],
 					"style" : "",
 					"text" : "zl.len"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-100",
-					"maxclass" : "button",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 86.0, 245.0, 24.0, 24.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 568.5, 256.0, 24.0, 24.0 ],
-					"style" : ""
 				}
 
 			}
@@ -5918,7 +5997,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 59.0, 337.0, 55.0, 22.0 ],
 					"style" : "",
 					"text" : "permute"
@@ -6003,7 +6082,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 1,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -6498,7 +6577,6 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-68",
-					"int" : 1,
 					"maxclass" : "gswitch2",
 					"numinlets" : 2,
 					"numoutlets" : 2,
@@ -6532,20 +6610,6 @@
 					"patching_rect" : [ 883.0, 168.0, 40.0, 22.0 ],
 					"style" : "",
 					"text" : "t b i b"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-25",
-					"maxclass" : "button",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 883.0, 105.0, 24.0, 24.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 508.5, 256.0, 24.0, 24.0 ],
-					"style" : ""
 				}
 
 			}
@@ -6923,11 +6987,28 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 249.0, 93.0, 251.0, 26.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 3,
+					"presentation_linecount" : 2,
 					"presentation_rect" : [ 27.0, 223.0, 474.0, 67.0 ],
 					"style" : "",
-					"text" : "\"The political elite are living it up as if they were royalty, while they screw the Aussie battler over!\n#auspol https://t.co/D1nPZhFgp0\"",
+					"text" : "\"@LennaLeprena @Barnaby_Joyce \\\"farmer\\\" who doesn't understand cars and floods. He is the pig-headed fool he appears to be. Figures! #Auspol\"",
 					"textcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 270.0,
+					"bgcolor" : [ 0.372549, 0.196078, 0.486275, 1.0 ],
+					"id" : "obj-100",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 886.0, 273.0, 128.0, 128.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 856.0, 212.5, 287.0, 78.0 ],
+					"proportion" : 0.39,
+					"style" : ""
 				}
 
 			}
@@ -6947,33 +7028,6 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-10", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-120", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-100", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-124", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-100", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-139", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-100", 0 ]
 				}
 
 			}
@@ -7053,15 +7107,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-100", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-117", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-97", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -7096,15 +7141,6 @@
 					"hidden" : 0,
 					"midpoints" : [ 732.5, 66.0, 708.0, 66.0, 708.0, 228.0, 732.5, 228.0 ],
 					"source" : [ "obj-12", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-25", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-120", 0 ]
 				}
 
 			}
@@ -7743,6 +7779,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-108", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-175", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-165", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -7927,33 +7972,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-25", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-81", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-25", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-88", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-25", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -8083,15 +8101,6 @@
 					"hidden" : 0,
 					"midpoints" : [ 258.5, 116.0, 258.5, 116.0 ],
 					"source" : [ "obj-4", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-100", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-40", 0 ]
 				}
 
 			}
@@ -8478,7 +8487,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-108", 1 ],
+					"destination" : [ "obj-175", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-74", 0 ]
@@ -8678,7 +8687,7 @@
 					"destination" : [ "obj-8", 2 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 258.5, 678.0, 621.166667, 678.0 ],
+					"midpoints" : [ 258.5, 678.0, 621.166687, 678.0 ],
 					"source" : [ "obj-9", 0 ]
 				}
 
@@ -8848,6 +8857,10 @@
 			}
 , 			{
 				"name" : "bach.wrap.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "permute.mxo",
 				"type" : "iLaX"
 			}
 , 			{
