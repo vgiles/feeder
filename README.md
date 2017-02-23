@@ -14,6 +14,8 @@ To install these packages, open the package manager in MaxMSP (File-Show Package
 
 Once downloaded (click "clone or download" then "download as zip"), extract the files. Open "feeder.maxproj" in MaxMSP, and the relevant interface windows will open automatically.
 
+For performance, the piece will require an active internet connection to pull data from Twitter.
+
 Premiere forthcoming, after which please contact me if you wish to perform the piece.
 
 Things to add in future version:
