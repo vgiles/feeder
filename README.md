@@ -2,7 +2,7 @@
 ## For any treble instrument
 ### Dedicated to [Alice Bennett](http://www.alicebennett.net)
 
-**MaxMSP 7 Patch.**
+**MaxMSP 7 Patch. (Does not currently work with Max8**
 
 Requires the following externals/packages to be installed:
 
